@@ -4,7 +4,7 @@
 git clone https://github.com/paulquickstart/vuejs2-code-test.git
 
 ## Purpose
-- use for test tracing and debuing.
+- use for testing, tracing and debuging.
 
 ## Functions
 - component
