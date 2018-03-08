@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title> Growler </title>
+	</head>
+	<body>
+	 	<div id="app">
+	 		<form v-on:submit.prevent="onSubmit">
+		 		<div v-for="list in lists">
+		 			<input type="text" v-model="list.first_name">
+		 		</div>
+		 		<button> submit </button>
+		 	</form>
+		</div>
+		<script type="text/javascript" src="https://unpkg.com/vue@2.5.13/dist/vue.js"> </script>
+		<script type="text/javascript">
+			new Vue({
+			  el: '#app',
+			  data: {
+			   	lists:[
+			   		{ "id":"1", "user_id":"3", "attend_stat": "1", "first_name":"Paul"},
+			   		{ "id":"2", "user_id":"3", "attend_stat": "1", "first_name":"Keneth"},
+			   		{ "id":"3", "user_id":"3", "attend_stat": "1", "first_name":"JR"},
+			   	]
+			  },
+			  methods:{
+			  	onSubmit:function(event){
+			  		var obj = this
+			  		var addValue = obj.lists
+			  		for (var i = 0; i < addValue.length; i++) {
+			  			console.log(addValue[i]);
+			  		}
+			  	}
+			  }
+			})
+		</script>
+	</body>
+	</body>
+</html>

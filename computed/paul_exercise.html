@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title> Growler </title>
+	</head>
+	<body>
+		<div id="app">
+			<div v-if="report_db.user_id == 1 ">
+				<h1> report submited </h1>
+			</div>
+			<div v-else>
+  				<div id="report">
+					<p> Jeff </p>
+					<p> jeff2 </p>
+				</div>
+			</div>
+			<button v-on:click="submit_report(report)">submit report</button>
+			{{ report_from_db }}
+		</div>
+		<script type="text/javascript" src="https://unpkg.com/vue@2.5.13/dist/vue.js"> </script>
+		<script type="text/javascript">
+			new Vue({
+			  	el: '#app',
+			  	data: {
+			  		doneReport: true,
+			  		report: {
+			 			user_id : '0'
+			 		},
+			 		report_db:{
+			 			user_id: ''
+			 		}
+			  	},
+			  	methods: {
+			  		submit_report :function(report){
+			  			return this.report.user_id =1
+			  		}
+			  	},
+			  	computed:{
+			  		report_from_db : function(){
+			  			this.report_db.user_id = this.report.user_id
+			  			return this.report_db.user_id
+			  		}
+			  	}
+			})
+		</script>
+	</body>
+	</body>
+</html>

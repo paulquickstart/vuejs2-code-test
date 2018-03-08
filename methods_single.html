@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title> Growler </title>
+	</head>
+	<body>
+	 	<div id="app">
+	 		<form v-on:submit.prevent="onSubmit">
+		 		<input type="text" v-model="list.first_name">
+		 		<button> submit </button>
+		 	</form>
+		 	<form v-on:submit.prevent="onSubmit2">
+		 		<input type="text" v-model="list2.first_name">
+		 		<button> submit </button>
+		 	</form>
+		</div>
+		<script type="text/javascript" src="https://unpkg.com/vue@2.5.13/dist/vue.js"> </script>
+		<script type="text/javascript">
+			new Vue({
+			  el: '#app',
+			  data: {
+			  	list:{
+			  		first_name: 'test' // remove or input text
+			  	},
+			  	list2:{
+			  		first_name: 'test2' // remove or input text
+			  	}
+			  },
+			  methods:{
+			  	onSubmit:function(event){
+			  		var app = this
+			  		var new_value = app.list
+			  		alert(new_value.first_name);
+			  	},
+			  	onSubmit2:function(event){
+			  		var app = this
+			  		var new_value = app.list2
+			  		alert(new_value.first_name);
+			  	}
+			  }
+			})
+		</script>
+	</body>
+	</body>
+</html>

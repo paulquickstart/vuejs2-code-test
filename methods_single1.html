@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title> Growler </title>
+	</head>
+	<body>
+	 	<div id="app">
+	 		<div v-for="list in lists">
+	 			<td> {{ list.id }} </td>
+	 			<td>
+			 		<input type="text" v-model="list.first_name">
+			 		<button v-on:click="onSubmit(list)" > submit </button>
+			 		{{ list.first_name }}
+				</td>
+			</div>
+		</div>
+		<script type="text/javascript" src="https://unpkg.com/vue@2.5.13/dist/vue.js"> </script>
+		<script type="text/javascript">
+			new Vue({
+			  el: '#app',
+			  data: {
+			  	lists:[
+			  		{"id":"1", "first_name": "Paul"},
+			  		{"id":"2", "first_name": "JR"}
+			  	]
+			  },
+			  methods:{
+			  	onSubmit:function(list){
+			  		// stored into database
+					console.log(list.first_name);
+			  	}
+			  }
+			})
+		</script>
+	</body>
+	</body>
+</html>

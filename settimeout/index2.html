@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title> Growler </title>
+	</head>
+	<body>
+		<div id="app">
+			
+		</div>
+		<script type="text/javascript" src="https://unpkg.com/vue@2.5.13/dist/vue.js"> </script>
+		<script type="text/javascript">
+			new Vue({
+			  	el: '#app',
+			  	data: {
+			  		checkCreate:{
+			  			attendance: false
+			  		},
+			  		checkResult: ''
+			  	},
+			  	created(){
+			  		this.attenDance()
+			  	},
+			  	methods:{
+			  		attenDance(){
+			  			this.checkResult = this.checkCreate.attendance
+			  			console.log("created", this.checkResult)
+			  		}
+			  	},
+			  	computed:{
+			  		checkAttendance(){
+			  			this.checkResult = this.checkCreate.attendance
+			  			consle.log("computed", this.checkResult)
+			  		}
+			  	},
+			  	template:`
+				    <div>
+				      <div><report></report></div>
+				    </div>
+			  	`,
+			  	components: {
+			  		report:()=>({
+				      component:new Promise((resolve)=>(
+				        setTimeout(() => 
+				          resolve({template:"<div>loaded {{checkAttendance}} </div>"}), 3000)
+				      )),
+				      loading: {template:"<div>Pleas Wait loading</div>"},
+				      error: {template:"<div>Good Luck timeout</div>"},
+				      delay: 200,
+				      timeout: 3000
+				    }),
+			  	}
+			})
+		</script>
+	</body>
+	</body>
+</html>

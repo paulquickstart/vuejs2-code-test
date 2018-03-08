@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title> Growler </title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="first_name"><br>
+			<input type="text" v-model="last_name"><br>
+		 	<p> First name : {{ first_name }} </p>
+		 	<p> Last name : {{ last_name }} </p>
+		</div>
+		<script type="text/javascript" src="https://unpkg.com/vue@2.5.13/dist/vue.js"> </script>
+		<script type="text/javascript">
+			new Vue({
+			  	el: '#app',
+			  	data: {
+			   		first_name : '',
+			   		last_name: ''
+			  	},
+			  	computed:{
+			  		fullaname: function(){
+			  			return this.first_name + " " + this.last_name 
+			  		}
+			  	}
+			})
+		</script>
+	</body>
+	</body>
+</html>

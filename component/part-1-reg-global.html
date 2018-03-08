@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title> Growler </title>
+	</head>
+	<body>
+		<div id="app">
+			<h3> Using Components </h3>
+			Global Registration
+			<my-component></my-component>
+		</div>
+		<script type="text/javascript" src="https://unpkg.com/vue@2.5.13/dist/vue.js"> </script>
+		<script type="text/javascript">
+			// register
+			Vue.component('my-component', {
+			  template: '<div>A custom component!</div>'
+			})
+
+			new Vue({
+			  	el: '#app'			  
+			})
+
+		</script>
+	</body>
+	</body>
+</html>

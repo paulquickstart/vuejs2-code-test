@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title> Growler </title>
+	</head>
+	<body>
+		<div id="app">
+			<h1> You are a <strong> {{ level }} </strong></h1>
+			<hr/>
+			<h3> Current XP: {{ xp }} </h3>
+			<br>
+			<button v-on:click="addXP">add xp</button> <br>
+			<button v-on:click="decreaseXP">decreate xp</button>
+		</div>
+		<script type="text/javascript" src="https://unpkg.com/vue@2.5.13/dist/vue.js"> </script>
+		<script type="text/javascript">
+			new Vue({
+			  	el: '#app',
+			  	data: {
+			  		xp: 10
+			  	},
+			  	methods:{
+			  		addXP : function(){
+			  			return this.xp += 10 
+			  		},
+			  		decreaseXP: function(){
+			  			return this.xp -= 10
+			  		},
+			  	},
+			  	computed:{
+		  			level: function(){
+		  				if(this.xp >= 200){
+		  					return "Pro"
+		  				}else if(this.xp >= 100){ 
+		  					return "Intermediate"
+		  				}else if(this.xp >= 0){
+		  					return "Beginner"
+		  				} else {
+		  					return "Banned"
+		  				}
+		  			}
+		  		}
+			})
+		</script>
+	</body>
+	</body>
+</html>
